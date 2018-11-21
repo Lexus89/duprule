@@ -35,7 +35,7 @@ impl DupRule {
                     let key = Rule::hash(rule);
 
                     if !checked.contains_key(&key) {
-                        write!(stream, "{}", raw_rule).unwrap();
+                        write!(stream, "{}\n", raw_rule).unwrap();
                         checked.insert(key, ());
                     }
                 }
@@ -54,7 +54,7 @@ impl DupRule {
             let raw_rule = raw_rule.unwrap();
 
             match Rule::parse(&raw_rule) {
-                Err(_) => write!(stream, "{}", raw_rule).unwrap(),
+                Err(_) => write!(stream, "{}\n", raw_rule).unwrap(),
                 Ok(rule) => {
                     let key = Rule::hash(rule);
 
