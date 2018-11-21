@@ -56,3 +56,6 @@ duprule -o duplicates.txt < rockyou.rule > rockyou.rule.uniq
 
 duprule is written in Rust.
 // TODO: update installation steps
+
+#>sudo apt-get install rust
+#>cargo build 
